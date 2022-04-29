@@ -1,17 +1,14 @@
-import React from 'react';
-import { Box, Center, Container, Flex } from '@chakra-ui/react';
+import { Box, Center, Container, useMediaQuery } from '@chakra-ui/react';
 
 import Carousel from 'nuka-carousel';
 
 const CustomCarousel = () => {
+	const [isSmallScreen] = useMediaQuery('(max-width: 900px)');
+
 	const settings = {
 		pagingDotsStyle: {
 			fill: '#fff',
 			width: '20px',
-			'.paging-dot': {
-				width: '10',
-				height: '10',
-			},
 		},
 	};
 
@@ -23,13 +20,7 @@ const CustomCarousel = () => {
 				autoplayInterval={6000}
 				defaultControlsConfig={settings}
 				swiping={true}
-				style={{
-					background: 'orange',
-					'& .paging-dot': {
-						width: '10',
-						height: '10',
-					},
-				}}
+				withoutControls={isSmallScreen}
 			>
 				<Box color='#fff' as='span'>
 					<Center bg='tomato' h={['200px', '400px']}>
