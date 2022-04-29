@@ -1,6 +1,7 @@
 const { extendTheme } = require('@chakra-ui/react');
 
 const theme = extendTheme({
+	body: { overscrollBehavior: 'none' },
 	colors: {
 		bruntSienna: {
 			50: '#D58936',
@@ -43,6 +44,15 @@ const theme = extendTheme({
 	fonts: {
 		body: '"Jost", sans-serif',
 		heading: '"Jost", sans-serif',
+	},
+	components: {
+		Grid: {
+			variants: {
+				selected: {
+					bg: 'red',
+				},
+			},
+		},
 	},
 });
 
