@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import { Container } from '@chakra-ui/react';
+import CategoryMenu from '../Components/CategoryMenu';
 import CustomCarousel from '../Components/heroSection/Carousel';
-import Carousel from '../Components/heroSection/Carousel';
-import Hero from '../Components/heroSection/Hero';
+import Content from '../Components/content';
 
 const Home: NextPage = () => {
 	return (
@@ -13,7 +15,11 @@ const Home: NextPage = () => {
 				<meta name='viewport' content='width=device-width,initial-scale=1' />
 				<meta name='description' content='Electronics and miscellaneous items whole sales' />
 			</Head>
-			<CustomCarousel />
+			<Container maxW={1275}>
+				<CustomCarousel />
+				<CategoryMenu />
+				<Content />
+			</Container>
 		</>
 	);
 };
