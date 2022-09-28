@@ -27,7 +27,7 @@ const CategoryMenu = () => {
 					// "background-color": 'red',
 					'& .item': {
 						'& .item-button': {
-							'border-radius': '0',
+							borderRadius: '0',
 							_after: {
 								transition: 'opacity .125s ease-in',
 								opacity: 0,
